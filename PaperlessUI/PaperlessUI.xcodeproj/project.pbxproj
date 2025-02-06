@@ -1,0 +1,568 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		DC20CDC92D429E1000B33A84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC20CDAA2D429E0F00B33A84 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC20CDB12D429E0F00B33A84;
+			remoteInfo = PaperlessUI;
+		};
+		DC20CDD32D429E1000B33A84 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC20CDAA2D429E0F00B33A84 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC20CDB12D429E0F00B33A84;
+			remoteInfo = PaperlessUI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DC20CDB22D429E0F00B33A84 /* PaperlessUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaperlessUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC20CDC82D429E1000B33A84 /* PaperlessUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaperlessUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC20CDD22D429E1000B33A84 /* PaperlessUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaperlessUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		DC20CDDA2D429E1000B33A84 /* Exceptions for "PaperlessUI" folder in "PaperlessUI" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = DC20CDB12D429E0F00B33A84 /* PaperlessUI */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		DC20CDB42D429E0F00B33A84 /* PaperlessUI */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				DC20CDDA2D429E1000B33A84 /* Exceptions for "PaperlessUI" folder in "PaperlessUI" target */,
+			);
+			path = PaperlessUI;
+			sourceTree = "<group>";
+		};
+		DC20CDCB2D429E1000B33A84 /* PaperlessUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PaperlessUITests;
+			sourceTree = "<group>";
+		};
+		DC20CDD52D429E1000B33A84 /* PaperlessUIUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = PaperlessUIUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC20CDAF2D429E0F00B33A84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC20CDC52D429E1000B33A84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC20CDCF2D429E1000B33A84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC20CDA92D429E0F00B33A84 = {
+			isa = PBXGroup;
+			children = (
+				DC20CDB42D429E0F00B33A84 /* PaperlessUI */,
+				DC20CDCB2D429E1000B33A84 /* PaperlessUITests */,
+				DC20CDD52D429E1000B33A84 /* PaperlessUIUITests */,
+				DC20CDB32D429E0F00B33A84 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC20CDB32D429E0F00B33A84 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC20CDB22D429E0F00B33A84 /* PaperlessUI.app */,
+				DC20CDC82D429E1000B33A84 /* PaperlessUITests.xctest */,
+				DC20CDD22D429E1000B33A84 /* PaperlessUIUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC20CDB12D429E0F00B33A84 /* PaperlessUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC20CDDB2D429E1000B33A84 /* Build configuration list for PBXNativeTarget "PaperlessUI" */;
+			buildPhases = (
+				DC20CDAE2D429E0F00B33A84 /* Sources */,
+				DC20CDAF2D429E0F00B33A84 /* Frameworks */,
+				DC20CDB02D429E0F00B33A84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				DC20CDB42D429E0F00B33A84 /* PaperlessUI */,
+			);
+			name = PaperlessUI;
+			packageProductDependencies = (
+			);
+			productName = PaperlessUI;
+			productReference = DC20CDB22D429E0F00B33A84 /* PaperlessUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC20CDC72D429E1000B33A84 /* PaperlessUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC20CDE02D429E1000B33A84 /* Build configuration list for PBXNativeTarget "PaperlessUITests" */;
+			buildPhases = (
+				DC20CDC42D429E1000B33A84 /* Sources */,
+				DC20CDC52D429E1000B33A84 /* Frameworks */,
+				DC20CDC62D429E1000B33A84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC20CDCA2D429E1000B33A84 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				DC20CDCB2D429E1000B33A84 /* PaperlessUITests */,
+			);
+			name = PaperlessUITests;
+			packageProductDependencies = (
+			);
+			productName = PaperlessUITests;
+			productReference = DC20CDC82D429E1000B33A84 /* PaperlessUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DC20CDD12D429E1000B33A84 /* PaperlessUIUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC20CDE32D429E1000B33A84 /* Build configuration list for PBXNativeTarget "PaperlessUIUITests" */;
+			buildPhases = (
+				DC20CDCE2D429E1000B33A84 /* Sources */,
+				DC20CDCF2D429E1000B33A84 /* Frameworks */,
+				DC20CDD02D429E1000B33A84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC20CDD42D429E1000B33A84 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				DC20CDD52D429E1000B33A84 /* PaperlessUIUITests */,
+			);
+			name = PaperlessUIUITests;
+			packageProductDependencies = (
+			);
+			productName = PaperlessUIUITests;
+			productReference = DC20CDD22D429E1000B33A84 /* PaperlessUIUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC20CDAA2D429E0F00B33A84 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					DC20CDB12D429E0F00B33A84 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					DC20CDC72D429E1000B33A84 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = DC20CDB12D429E0F00B33A84;
+					};
+					DC20CDD12D429E1000B33A84 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = DC20CDB12D429E0F00B33A84;
+					};
+				};
+			};
+			buildConfigurationList = DC20CDAD2D429E0F00B33A84 /* Build configuration list for PBXProject "PaperlessUI" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DC20CDA92D429E0F00B33A84;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = DC20CDB32D429E0F00B33A84 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC20CDB12D429E0F00B33A84 /* PaperlessUI */,
+				DC20CDC72D429E1000B33A84 /* PaperlessUITests */,
+				DC20CDD12D429E1000B33A84 /* PaperlessUIUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC20CDB02D429E0F00B33A84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC20CDC62D429E1000B33A84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC20CDD02D429E1000B33A84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC20CDAE2D429E0F00B33A84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC20CDC42D429E1000B33A84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC20CDCE2D429E1000B33A84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC20CDCA2D429E1000B33A84 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC20CDB12D429E0F00B33A84 /* PaperlessUI */;
+			targetProxy = DC20CDC92D429E1000B33A84 /* PBXContainerItemProxy */;
+		};
+		DC20CDD42D429E1000B33A84 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC20CDB12D429E0F00B33A84 /* PaperlessUI */;
+			targetProxy = DC20CDD32D429E1000B33A84 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DC20CDDC2D429E1000B33A84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PaperlessUI/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HaydenBoss.PaperlessUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC20CDDD2D429E1000B33A84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PaperlessUI/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HaydenBoss.PaperlessUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DC20CDDE2D429E1000B33A84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DC20CDDF2D429E1000B33A84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC20CDE12D429E1000B33A84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HaydenBoss.PaperlessUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PaperlessUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PaperlessUI";
+			};
+			name = Debug;
+		};
+		DC20CDE22D429E1000B33A84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HaydenBoss.PaperlessUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PaperlessUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PaperlessUI";
+			};
+			name = Release;
+		};
+		DC20CDE42D429E1000B33A84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HaydenBoss.PaperlessUIUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PaperlessUI;
+			};
+			name = Debug;
+		};
+		DC20CDE52D429E1000B33A84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HaydenBoss.PaperlessUIUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PaperlessUI;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC20CDAD2D429E0F00B33A84 /* Build configuration list for PBXProject "PaperlessUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC20CDDE2D429E1000B33A84 /* Debug */,
+				DC20CDDF2D429E1000B33A84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC20CDDB2D429E1000B33A84 /* Build configuration list for PBXNativeTarget "PaperlessUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC20CDDC2D429E1000B33A84 /* Debug */,
+				DC20CDDD2D429E1000B33A84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC20CDE02D429E1000B33A84 /* Build configuration list for PBXNativeTarget "PaperlessUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC20CDE12D429E1000B33A84 /* Debug */,
+				DC20CDE22D429E1000B33A84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC20CDE32D429E1000B33A84 /* Build configuration list for PBXNativeTarget "PaperlessUIUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC20CDE42D429E1000B33A84 /* Debug */,
+				DC20CDE52D429E1000B33A84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC20CDAA2D429E0F00B33A84 /* Project object */;
+}
