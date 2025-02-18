@@ -29,7 +29,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="didEndEditing:" destination="BYZ-38-t0r" eventType="editingChanged" id="a9Z-n4-jso"/>
+                                    <action selector="didEndEditing:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="M3w-Nc-yBO"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -88,24 +88,16 @@
                     <view key="view" contentMode="scaleToFill" id="nZb-Xz-LvC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYk-AY-Qnx">
-                                <rect key="frame" x="154.66666666666666" y="408.66666666666669" width="84" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Dismiss"/>
-                                <connections>
-                                    <segue destination="PqZ-TX-83A" kind="unwind" unwindAction="myUnwindWithSegue:" id="4HB-ud-VhV"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="8rV-GA-5k3"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
-                        <constraints>
-                            <constraint firstItem="eYk-AY-Qnx" firstAttribute="centerY" secondItem="nZb-Xz-LvC" secondAttribute="centerY" id="Bbv-4W-j0S"/>
-                            <constraint firstItem="eYk-AY-Qnx" firstAttribute="centerX" secondItem="nZb-Xz-LvC" secondAttribute="centerX" id="aoQ-oC-ffN"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Green" largeTitleDisplayMode="never" id="Rs4-VZ-cc0"/>
+                    <navigationItem key="navigationItem" title="Green" largeTitleDisplayMode="never" id="Rs4-VZ-cc0">
+                        <barButtonItem key="rightBarButtonItem" title="Pop" id="uqx-t3-3Vv">
+                            <connections>
+                                <segue destination="PqZ-TX-83A" kind="unwind" unwindAction="myUnwindWithSegue:" id="RTN-Ll-f1f"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfy-is-En0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="PqZ-TX-83A" userLabel="Exit" sceneMemberID="exit"/>
