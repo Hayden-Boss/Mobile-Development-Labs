@@ -30,6 +30,7 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="didEndEditing:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="M3w-Nc-yBO"/>
+                                    <action selector="textFieldPrimaryActionTriggered:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="kkk-wA-iyA"/>
                                 </connections>
                             </textField>
                         </subviews>

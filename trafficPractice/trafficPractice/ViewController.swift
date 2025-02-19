@@ -14,6 +14,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func textFieldPrimaryActionTriggered(_ sender: Any) {
+        textField.resignFirstResponder()
+    }
+    
     @IBAction func didEndEditing(_ sender: Any) {
         self
             .performSegue(withIdentifier: "yellow", sender: textField)
