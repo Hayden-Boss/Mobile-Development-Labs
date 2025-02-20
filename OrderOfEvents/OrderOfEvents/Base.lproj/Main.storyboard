@@ -52,9 +52,8 @@
                                     <segue destination="2Ig-gI-evV" kind="show" id="lIA-x4-Kwk"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nothing has happened yet." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaq-xd-0Th">
-                                <rect key="frame" x="94" y="103" width="205" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nothing has happened yet." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oaq-xd-0Th">
+                                <rect key="frame" x="0.0" y="416" width="393" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -62,10 +61,15 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vbt-A3-33H"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oaq-xd-0Th" firstAttribute="centerY" secondItem="f3u-lI-4TT" secondAttribute="centerY" id="M3F-IC-WTr"/>
+                            <constraint firstItem="vbt-A3-33H" firstAttribute="trailing" secondItem="oaq-xd-0Th" secondAttribute="trailing" id="jb9-a0-uOv"/>
+                            <constraint firstItem="oaq-xd-0Th" firstAttribute="leading" secondItem="vbt-A3-33H" secondAttribute="leading" id="wOD-2i-iSX"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9bL-nv-a6t"/>
                     <connections>
-                        <outlet property="middleViewControllerLabel" destination="f3u-lI-4TT" id="OYX-NJ-c5J"/>
+                        <outlet property="middleViewControllerLabel" destination="oaq-xd-0Th" id="Yru-Ya-ktA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Stz-by-uTG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
