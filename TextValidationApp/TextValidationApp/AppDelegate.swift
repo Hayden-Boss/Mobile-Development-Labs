@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Calculator
+//  TextValidationApp
 //
-//  Created by Hayden Boss on 2/12/25.
+//  Created by Hayden Boss on 2/21/25.
 //
 
 import UIKit
@@ -33,5 +33,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
 
