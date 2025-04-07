@@ -1,16 +1,26 @@
 import Foundation
 
+// MARK: - Protocols
 
-//camera
-
-
-
+// ISP: Instead of forcing all cameras to support both photos and videos,
+// we create separate protocols for photo and video functionality.
 protocol CaptureDevice {
     var hasCamera: Bool { get }
     var aspectRatio: Int { get set }
 }
 
-class PhotoCamera: CaptureDevice {
+protocol PhotoCapture {
+    func takePhoto()
+}
+
+protocol VideoCapture {
+    func takeVideo()
+}
+
+// MARK: - Camera Types
+
+// SRP: This class is responsible ONLY for taking photos.
+class PhotoCamera: CaptureDevice, PhotoCapture {
     var hasCamera: Bool
     var aspectRatio: Int
     
@@ -20,24 +30,49 @@ class PhotoCamera: CaptureDevice {
     }
     
     func takePhoto() {
-        
+        print("I took a photo")
     }
 }
 
-// This is single responsibility because only video camera can take a video
-class VideoCamera: CaptureDevice {
+// SRP: This class is responsible ONLY for taking videos.
+class VideoCamera: CaptureDevice, VideoCapture {
     var hasCamera: Bool
     var aspectRatio: Int
     
     init(hasCamera: Bool, aspectRatio: Int) {
-            self.hasCamera = hasCamera
-            self.aspectRatio = aspectRatio
-        
+        self.hasCamera = hasCamera
+        self.aspectRatio = aspectRatio
+    }
+    
     func takeVideo() {
         print("I took a video")
     }
 }
 
+// OCP: We add a new camera type without modifying existing classes.
+// LSP: DualCamera follows the expected behavior of its base types (PhotoCapture and VideoCapture).
+class DualCamera: CaptureDevice, PhotoCapture, VideoCapture {
+    var hasCamera: Bool
+    var aspectRatio: Int
+    
+    init(hasCamera: Bool, aspectRatio: Int) {
+        self.hasCamera = hasCamera
+        self.aspectRatio = aspectRatio
+    }
+    
+    func takePhoto() {
+        print("I took a photo with the dual camera")
+    }
+    
+    func takeVideo() {
+        print("I took a video with the dual camera")
+    }
+}
+
+// MARK: - View Controller
+
+// DIP: CaptureViewController depends on an abstraction (CaptureDevice),
+// not a concrete implementation like PhotoCamera or VideoCamera.
 class CaptureViewController {
     let camera: CaptureDevice
     
@@ -45,42 +80,14 @@ class CaptureViewController {
         self.camera = camera
     }
     
+    func captureMedia() {
+        // LSP: The controller can use any camera type without breaking functionality.
+        if let photoCamera = camera as? PhotoCapture {
+            photoCamera.takePhoto()
+        }
+        
+        if let videoCamera = camera as? VideoCapture {
+            videoCamera.takeVideo()
+        }
+    }
 }
-
-
-
-
-//class videoViewController: Camera {
-//    var hasCamera: Bool
-//    
-//    var aspectRatio: Int
-//    
-//    func takePicture() {
-//        <#code#>
-//    }
-//    
-//    func takeVideo() {
-//        <#code#>
-//    }
-//    
-//    func startVideo() {
-//        print("starting video")
-//    }
-//    func endVideo() {
-//        print("ending video")
-//    }
-//}
-//    extension Camera {
-//        func zoomIn() {
-//            print("zooming in")
-//        }
-//        func zoomOut() {
-//            print("zooming out")
-//        }
-//    }
-//    
-//extension videoViewController {
-//        func saveVideo() {
-//            print("saving video")
-//        }
-//    }

@@ -17,15 +17,15 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(familyMember?.name)
+        
         guard let familyMember = familyMember else { return }
         familyImageView.image = UIImage(named: familyMember.name)
         familyNameLabel.text = familyMember.name
         familyAgeLabel.text = "\(familyMember.age) years old"
-        if let occupation = familyMember.occupation {
-            familyJobLabel.text = "Occupation: \(occupation))"
+        if let occupation = familyMember.jobs {
+            familyJobLabel.text = "Occupation: \(occupation)"
         }
-        familyHobbiesLabel.text = "Hobbies: \(familyMember.hobbies?.joined(separator: ", ") ?? "No hobbies"))"
+        familyHobbiesLabel.text = "Hobbies: \(familyMember.hobbies?.joined(separator: ", ") ?? "No hobbies")"
     }
     
 }
