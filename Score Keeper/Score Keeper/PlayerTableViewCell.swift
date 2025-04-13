@@ -7,13 +7,32 @@
 
 import UIKit
 
+protocol PlayerTableViewCellDelegate: AnyObject {
+    func didChangeScore(for player: Player, newScore: Int)
+}
+
 class PlayerTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var stepper: UIStepper!
+    
+    var player: Player!
+    weak var delegate: PlayerTableViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
+    
+    @IBAction func stepperButtonTapped(_ sender: UIStepper) {
+        let newScore = Int(sender.value)
+        scoreLabel.text = "\(newScore)"
+        delegate?.didChangeScore(for: player, newScore: newScore)
+    }
+    
+    
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
