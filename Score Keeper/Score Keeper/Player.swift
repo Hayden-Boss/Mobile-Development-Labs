@@ -17,10 +17,16 @@ enum SortOrder {
     case ascending
     case descending
 }
+enum WinnerControl {
+    case lowest
+    case highest
+}
 struct Sport {
     var title: String
     var players: [Player]
-    var sportImage: String?
+    var sportImage: String
     var leader: Player?
     var sortOrder: SortOrder
+    var winnerControl: WinnerControl
 }
+

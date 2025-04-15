@@ -16,11 +16,12 @@ class AddSportViewController: UIViewController{
     weak var delegate: AddSportViewControllerDelegate? // Declare the delegate
 
         var players = [Player(name: "Hayden", score: 0, logo: "person.crop.circle.fill"),
-                       Player(name: "Johnny", score: 2, logo: "person.crop.circle.fill"),
+                       Player(name: "Johnny", score: 0, logo: "person.crop.circle.fill"),
                        Player(name: "Fred", score: 0, logo: "person.crop.circle.fill")]
 
         var selectedSportImage: String = "dice.fill"
         var sport: Sport?
+    
     
     @IBOutlet weak var imageListControl: UISegmentedControl!
     @IBOutlet weak var titleTextField: UITextField!
@@ -79,14 +80,18 @@ class AddSportViewController: UIViewController{
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         let sportTitle = titleTextField.text ?? "Untitled Sport"
-        sport = Sport(title: sportTitle, players: players, sportImage: selectedSportImage, sortOrder: sortByControl.selectedSegmentIndex == 0 ? .descending : .ascending)
+        let winnerSetting: WinnerControl = winnerControl.selectedSegmentIndex == 0 ? .highest : .lowest
+        sport = Sport(title: sportTitle, players: players, sportImage: selectedSportImage, sortOrder: sortByControl.selectedSegmentIndex == 0 ? .descending : .ascending, winnerControl: winnerSetting)
+
         updateLeader()
         }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "unwindToSportList" {
             let sportTitle = titleTextField.text ?? "Untitled Sport"
-            sport = Sport(title: sportTitle, players: players, sportImage: selectedSportImage, sortOrder: sortByControl.selectedSegmentIndex == 0 ? .descending : .ascending)
+            let winnerSetting: WinnerControl = winnerControl.selectedSegmentIndex == 0 ? .highest : .lowest
+            sport = Sport(title: sportTitle, players: players, sportImage: selectedSportImage, sortOrder: sortByControl.selectedSegmentIndex == 0 ? .descending : .ascending, winnerControl: winnerSetting)
+
         }
     }
     

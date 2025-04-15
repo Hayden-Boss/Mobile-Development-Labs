@@ -9,35 +9,35 @@ import UIKit
 
 protocol PlayerScoreTableViewControllerDelegate: AnyObject {
     func didChangeWinnerControlSelection(_ index: Int)
+    func didUpdateGame(_ sport: Sport)
 }
 
 class PlayerScoreTableViewController: UITableViewController, PlayerTableViewCellDelegate {
+    weak var delegate: PlayerScoreTableViewControllerDelegate?
     
-    weak var delegate: PlayerTableViewCellDelegate?
-    var winnerControl: UISegmentedControl
+    var winnerControlIndex: Int = 0
     
     var players = [Player]()
     var sport: Sport?
     
     func didChangeScore(for player: Player, newScore: Int) {
-            // Find the player in the array and update their score
-            if let index = players.firstIndex(where: { $0.name == player.name }) {
-                players[index].score = newScore
-                sortPlayers()
-                let indexPath = IndexPath(row: index, section: 0)
-                tableView.reloadRows(at: [indexPath], with: .none)
-            }
+        // Find the player in the array and update their score
+        if let index = players.firstIndex(where: { $0.name == player.name }) {
+            players[index].score = newScore
+            sortPlayers()
         }
-        
-        override func viewDidLoad() {
+    }
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         
-            if let sport = sport {
-                players = sport.players
-                title = sport.title
-                sortPlayers()
-                tableView.reloadData()
-            }
+        if let sport = sport {
+            players = sport.players
+            title = sport.title
+            sortPlayers()
+            updateLeader()
+            tableView.reloadData()
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -68,7 +68,6 @@ class PlayerScoreTableViewController: UITableViewController, PlayerTableViewCell
 
         cell.nameLabel.text = player.name
         cell.scoreLabel.text = "\(player.score)"
-        cell.logoImageView.image = UIImage(systemName: player.logo)
         
         cell.stepper.value = Double(player.score)
         
@@ -84,8 +83,8 @@ class PlayerScoreTableViewController: UITableViewController, PlayerTableViewCell
         performSegue(withIdentifier: "unwindToSportList2", sender: self)
     }
     
-    // Sorting method that sorts players by score
     func sortPlayers() {
+        // Sort players based on the selected order for display purposes only
         guard let order = sport?.sortOrder else { return }
 
         switch order {
@@ -95,49 +94,47 @@ class PlayerScoreTableViewController: UITableViewController, PlayerTableViewCell
             players.sort { $0.score > $1.score }
         }
 
+        // Reload the table view to reflect sorted players
         tableView.reloadData()
     }
-   
-    func updateLeader() {
-        // Ensure there are players to check
-        guard players.count > 0 else { return }
 
-        // Assign the leader based on the winnerControl segment
-        if let winnerControl = winnerControl {
-            if winnerControl.selectedSegmentIndex == 0 {
-                // Leader is the player with the highest score
-                sport?.leader = players.max(by: { $0.score < $1.score })
-            } else {
-                // Leader is the player with the lowest score
-                sport?.leader = players.min(by: { $0.score > $1.score }) // Correct comparison for lowest score
-            }
+    func updateLeader() {
+        guard !players.isEmpty else { return }
+        
+        let sortedPlayers: [Player]
+        
+        switch sport?.winnerControl {
+        case .highest:
+            sortedPlayers = players.sorted { $0.score > $1.score }
+        case .lowest:
+            sortedPlayers = players.sorted { $0.score < $1.score }
+        case .none:
+            return
         }
         
-        updateLeaderLabel() // Update the leader label
-    
+        if let leader = sortedPlayers.first {
+            sport?.leader = leader
+            updateLeaderLabel(with: leader)
+        }
+    }
 
+
+    func updateLeaderLabel(with leader: Player) {
+        // Update the UI with the current leader (this can be a label or any UI element)
+        print("Current leader: \(leader.name)") // You can update a label here instead
+        
     }
 
     
-    func updateLeaderLabel() {
-            // You can display the leader's name or update a label/UI element if needed
-            if let leader = sport?.leader {
-                print("Current leader: \(leader.name)") // You can update a label here instead
-            }
-        }
-    
-    // This is a delegate method in PlayerScoreTableViewController that will be called when the winnerControl's selection changes
     func didChangeWinnerControlSelection(_ index: Int) {
-        if index == 0 {
-            // Leader is the player with the highest score
-            sport?.leader = players.max(by: { $0.score < $1.score })
-        } else {
-            // Leader is the player with the lowest score
-            sport?.leader = players.min(by: { $0.score > $1.score })
-        }
-
-        updateLeaderLabel() // Update the leader label
+        // Update winnerControl based on segmented control index
+        sport?.winnerControl = (index == 0) ? .highest : .lowest
+        sport?.sortOrder = (index == 0) ? .descending : .ascending
+        sortPlayers()
+        updateLeader()
     }
+
+
 
 
 
@@ -185,12 +182,13 @@ class PlayerScoreTableViewController: UITableViewController, PlayerTableViewCell
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-    }
-    */
+     }
+     */
     override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            
-            // Sort players whenever the view appears
-            sortPlayers()
-        }
+        super.viewWillAppear(animated)
+        
+        // Sort players whenever the view appears
+        sortPlayers()
+        updateLeader()
+    }
 }

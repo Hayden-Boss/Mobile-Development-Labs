@@ -13,7 +13,6 @@ protocol PlayerTableViewCellDelegate: AnyObject {
 
 class PlayerTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var stepper: UIStepper!

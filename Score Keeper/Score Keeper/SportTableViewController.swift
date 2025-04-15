@@ -17,13 +17,13 @@ class SportTableViewController: UITableViewController {
         
         // Dummy data for testing
         let player1 = Player(name: "Hayden", score: 0, logo: "person.crop.circle.fill")
-        let player2 = Player(name: "Johnny", score: 2, logo: "person.crop.circle.fill")
-        let player3 = Player(name: "Fred", score: 15, logo: "person.crop.circle.fill")
+        let player2 = Player(name: "Johnny", score: 0, logo: "person.crop.circle.fill")
+        let player3 = Player(name: "Fred", score: 0, logo: "person.crop.circle.fill")
         
-        let sport1 = Sport(title: "Baseball Game", players: [player1, player2, player3], sportImage: "football.fill", sortOrder: .descending)
+        let sport1 = Sport(title: "Baseball Game", players: [player1, player2, player3], sportImage: "football.fill", sortOrder: .descending, winnerControl: .highest )
         sports.append(sport1)
         
-        let sport2 = Sport(title: "Basketball Game", players: [player1, player3], sportImage: "football.fill", sortOrder: .ascending)
+        let sport2 = Sport(title: "Basketball Game", players: [player1, player3], sportImage: "football.fill", sortOrder: .ascending, winnerControl: .lowest)
         sports.append(sport2)
     }
     
@@ -46,17 +46,15 @@ class SportTableViewController: UITableViewController {
         
         cell.sportName.text = sport.title
         
-        if let logoName = sport.sportImage {
-                cell.sportImage.image = UIImage(systemName: logoName)
-            } else {
-                cell.sportImage.image = UIImage(systemName: "sportscourt") // Default image
-            }
+        cell.sportImage.image = UIImage(systemName: sport.sportImage)
+
         
-        if let firstPlayer = sport.players.first {
-                cell.leaderLabel.text = firstPlayer.name
-            } else {
-                cell.leaderLabel.text = "No players" // Default if no players
-            }
+        if let leader = sport.leader {
+            cell.leaderLabel.text = leader.name
+        } else {
+            cell.leaderLabel.text = "No leader"
+        }
+
         return cell
     }
 
