@@ -7,9 +7,9 @@ class StoreItemListTableViewController: UITableViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var filterSegmentedControl: UISegmentedControl!
     
-    // add item controller property
+    let storeItemController = StoreItemController()
     
-    var items = [String]()
+    var items = [StoreItem]()
     var imageLoadTasks: [IndexPath: Task<Void, Never>] = [:]
     
     let queryOptions = ["movie", "music", "software", "ebook"]
@@ -28,32 +28,58 @@ class StoreItemListTableViewController: UITableViewController {
         let mediaType = queryOptions[filterSegmentedControl.selectedSegmentIndex]
         
         if !searchTerm.isEmpty {
-            
+            let query: [String: String] = [
+                "term": searchTerm,
+                "media": mediaType,
+                "limit": "20",
+                "lang": "en-us"
+            ]
             // set up query dictionary
-            
-            // use the item controller to fetch items
-            // if successful, use the main queue to set self.items and reload the table view
-            // otherwise, print an error to the console
+            Task {
+                do {
+                    let fetchedItems = try await storeItemController.fetchItems(matching: query)
+                    self.items = fetchedItems
+                    self.tableView.reloadData()
+                } catch {
+                    print("Error fetching items: \(error)")
+                }
+            }
         }
     }
     
     func configure(cell: ItemCell, forItemAt indexPath: IndexPath) {
-        
         let item = items[indexPath.row]
-        
-        // set cell.name to the item's name
-        
-        // set cell.artist to the item's artist
-        
-        // set cell.artworkImage to nil
-        
-        // initialize a network task to fetch the item's artwork keeping track of the task
-        // in imageLoadTasks so they can be cancelled if the cell will not be shown after
-        // the task completes.
-        //
-        // if successful, set the cell.artworkImage using the returned image
+
+        // Log the item to verify that the artworkURL exists
+        print("Item: \(item)")  // Log the whole item to inspect its properties
+        print("Artwork URL: \(String(describing: item.artworkURL))")  // Log the URL
+
+        // Set the name and artist
+        cell.name = item.trackName
+        cell.artist = item.artistName  // Adjust to correct property
+        cell.artworkImage = nil
+
+        if let artworkURL = item.artworkURL {
+            print("Valid Artwork URL: \(artworkURL)")  // Log the valid URL here
+
+            imageLoadTasks[indexPath] = Task {
+                do {
+                    let (data, _) = try await URLSession.shared.data(from: artworkURL)
+                    if let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            cell.artworkImage = image
+                        }
+                    }
+                } catch {
+                    print("Error loading image: \(error)")
+                }
+            }
+        } else {
+            print("No artwork URL available")
+        }
     }
-    
+
+
     @IBAction func filterOptionUpdated(_ sender: UISegmentedControl) {
         
         fetchMatchingItems()
@@ -96,3 +122,11 @@ extension StoreItemListTableViewController: UISearchBarDelegate {
     }
 }
 
+extension String {
+    func isValidURL() -> Bool {
+        if let url = URL(string: self), UIApplication.shared.canOpenURL(url) {
+            return true
+        }
+        return false
+    }
+}
