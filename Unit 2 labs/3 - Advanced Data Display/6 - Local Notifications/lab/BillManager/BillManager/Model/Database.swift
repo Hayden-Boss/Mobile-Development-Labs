@@ -5,8 +5,29 @@
 
 import Foundation
 import UIKit
+import UserNotifications
 
 class Database {
+    
+    func scheduleReminder(for bill: Bill) {
+        guard let remindDate = bill.remindDate else { return }
+
+        let content = UNMutableNotificationContent()
+        content.title = "Bill Reminder"
+        content.body = "Your bill for \(bill.payee) is due soon."
+        content.sound = .default
+
+        let triggerDate = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: remindDate)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+
+        let request = UNNotificationRequest(identifier: bill.id.uuidString, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Error scheduling notification: \(error)")
+            }
+        }
+    }
+
     
     static let billUpdatedNotification = NSNotification.Name("com.apple.BillManager.billUpdated")
 
@@ -71,6 +92,9 @@ class Database {
         _billsLookup[bill.id] = bill
         save()
         NotificationCenter.default.post(name: Self.billUpdatedNotification, object: nil)
+        if bill.hasReminder {
+            scheduleReminder(for: bill)
+        }
     }
         
     func save() {
@@ -79,6 +103,7 @@ class Database {
     
     func deleteBill(withID id: Bill.ID) {
         _billsLookup[id] = nil
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id.uuidString])
     }
     
     func getBill(withID id: UUID) -> Bill? {

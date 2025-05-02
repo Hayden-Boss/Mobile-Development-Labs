@@ -4,15 +4,43 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
-        return true
-    }
+            
+            // Set UNUserNotificationCenter delegate
+            let center = UNUserNotificationCenter.current()
+            center.delegate = self
+            
+            // Define actions
+            let remindInAnHourAction = UNNotificationAction(
+                identifier: "REMIND_IN_AN_HOUR",
+                title: "Remind Me in an Hour",
+                options: []
+            )
+            
+            let markAsPaidAction = UNNotificationAction(
+                identifier: "MARK_AS_PAID",
+                title: "Mark as Paid",
+                options: [.authenticationRequired]
+            )
+            
+            // Define the category with both actions
+            let billCategory = UNNotificationCategory(
+                identifier: Bill.notificationCategoryID,
+                actions: [remindInAnHourAction, markAsPaidAction],
+                intentIdentifiers: [],
+                options: []
+            )
+            
+            // Register the category
+            center.setNotificationCategories([billCategory])
+            
+            return true
+        }
     
     // MARK: UISceneSession Lifecycle
 
