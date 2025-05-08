@@ -8,27 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedSport: String? = nil
+    @State private var selectedSport: Sport? = nil
     @State private var hasSubmitted = false
+    
+    let sports: [Sport] = Sport.dummySports
     
     var body: some View {
         ZStack {
             Color.black.ignoresSafeArea(edges: .all)
+            
             VStack {
                 Spacer()
+                
                 Text("Favorite Sport")
                     .font(.largeTitle)
                     .foregroundStyle(.white)
+                
                 Spacer()
-                HStack {
-                    fancyButton(title: "Golf")
-                    fancyButton(title: "Football")
+                
+                VStack(spacing: 20) {
+                    ForEach(sports) { sport in
+                        SportButtonView(sport: sport, selectedSport: $selectedSport)
+                    }
                 }
-                HStack {
-                    fancyButton(title: "Soccer")
-                    fancyButton(title: "Baseball")
-                }
+                
                 Spacer()
+                
                 Button {
                     hasSubmitted = true
                 } label: {
@@ -39,10 +44,9 @@ struct ContentView: View {
                 
                 if hasSubmitted {
                     if let sport = selectedSport {
-                        Text("You chose \(sport)")
+                        Text("You chose \(sport.name)")
                             .foregroundStyle(.white)
                             .padding(.top)
-                    } else {
                     }
                 }
                 
@@ -51,21 +55,14 @@ struct ContentView: View {
         }
     }
     
-    func fancyButton(title: String) -> some View {
-        Button {
-            selectedSport = title
-            if hasSubmitted {
-                hasSubmitted = false
-            }
-        } label: {
-            Text(title)
-                .frame(width: 70, height: 80)
+    func handleSportTap(_ sport: Sport) {
+        selectedSport = sport
+        if hasSubmitted {
+            hasSubmitted = false
         }
-        .buttonStyle(.borderedProminent)
-        .tint(.green)
-        .opacity(selectedSport == nil ? 1.0 : (selectedSport == title ? 1.0 : 0.4))
     }
 }
+
 
 
 
