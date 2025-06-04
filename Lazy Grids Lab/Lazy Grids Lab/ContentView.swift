@@ -74,7 +74,7 @@ struct ContentView: View {
                         .scrollTargetLayout()
                         .padding(.horizontal)
                     }
-                    .scrollTargetBehavior(.viewAligned)
+                    
                     
                     Text("Pants")
                         .font(.title2)
