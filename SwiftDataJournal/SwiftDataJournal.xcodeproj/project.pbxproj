@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		DC6EB96B2DF0A10E00F2C2EB /* Advanced Techniques Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Advanced Techniques Lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC6EB9A12DF1E7EB00F2C2EB /* SwiftDataJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDataJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		DC6EB96D2DF0A10E00F2C2EB /* Advanced Techniques Lab */ = {
+		DC6EB9A32DF1E7EB00F2C2EB /* SwiftDataJournal */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Advanced Techniques Lab";
+			path = SwiftDataJournal;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DC6EB9682DF0A10E00F2C2EB /* Frameworks */ = {
+		DC6EB99E2DF1E7EB00F2C2EB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -29,18 +29,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DC6EB9622DF0A10E00F2C2EB = {
+		DC6EB9982DF1E7EB00F2C2EB = {
 			isa = PBXGroup;
 			children = (
-				DC6EB96D2DF0A10E00F2C2EB /* Advanced Techniques Lab */,
-				DC6EB96C2DF0A10E00F2C2EB /* Products */,
+				DC6EB9A32DF1E7EB00F2C2EB /* SwiftDataJournal */,
+				DC6EB9A22DF1E7EB00F2C2EB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		DC6EB96C2DF0A10E00F2C2EB /* Products */ = {
+		DC6EB9A22DF1E7EB00F2C2EB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DC6EB96B2DF0A10E00F2C2EB /* Advanced Techniques Lab.app */,
+				DC6EB9A12DF1E7EB00F2C2EB /* SwiftDataJournal.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,64 +48,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DC6EB96A2DF0A10E00F2C2EB /* Advanced Techniques Lab */ = {
+		DC6EB9A02DF1E7EB00F2C2EB /* SwiftDataJournal */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DC6EB9792DF0A10E00F2C2EB /* Build configuration list for PBXNativeTarget "Advanced Techniques Lab" */;
+			buildConfigurationList = DC6EB9B12DF1E7EC00F2C2EB /* Build configuration list for PBXNativeTarget "SwiftDataJournal" */;
 			buildPhases = (
-				DC6EB9672DF0A10E00F2C2EB /* Sources */,
-				DC6EB9682DF0A10E00F2C2EB /* Frameworks */,
-				DC6EB9692DF0A10E00F2C2EB /* Resources */,
+				DC6EB99D2DF1E7EB00F2C2EB /* Sources */,
+				DC6EB99E2DF1E7EB00F2C2EB /* Frameworks */,
+				DC6EB99F2DF1E7EB00F2C2EB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				DC6EB96D2DF0A10E00F2C2EB /* Advanced Techniques Lab */,
+				DC6EB9A32DF1E7EB00F2C2EB /* SwiftDataJournal */,
 			);
-			name = "Advanced Techniques Lab";
+			name = SwiftDataJournal;
 			packageProductDependencies = (
 			);
-			productName = "Advanced Techniques Lab";
-			productReference = DC6EB96B2DF0A10E00F2C2EB /* Advanced Techniques Lab.app */;
+			productName = SwiftDataJournal;
+			productReference = DC6EB9A12DF1E7EB00F2C2EB /* SwiftDataJournal.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		DC6EB9632DF0A10E00F2C2EB /* Project object */ = {
+		DC6EB9992DF1E7EB00F2C2EB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					DC6EB96A2DF0A10E00F2C2EB = {
+					DC6EB9A02DF1E7EB00F2C2EB = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
-			buildConfigurationList = DC6EB9662DF0A10E00F2C2EB /* Build configuration list for PBXProject "Advanced Techniques Lab" */;
+			buildConfigurationList = DC6EB99C2DF1E7EB00F2C2EB /* Build configuration list for PBXProject "SwiftDataJournal" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = DC6EB9622DF0A10E00F2C2EB;
+			mainGroup = DC6EB9982DF1E7EB00F2C2EB;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = DC6EB96C2DF0A10E00F2C2EB /* Products */;
+			productRefGroup = DC6EB9A22DF1E7EB00F2C2EB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DC6EB96A2DF0A10E00F2C2EB /* Advanced Techniques Lab */,
+				DC6EB9A02DF1E7EB00F2C2EB /* SwiftDataJournal */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DC6EB9692DF0A10E00F2C2EB /* Resources */ = {
+		DC6EB99F2DF1E7EB00F2C2EB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -115,7 +115,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DC6EB9672DF0A10E00F2C2EB /* Sources */ = {
+		DC6EB99D2DF1E7EB00F2C2EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -125,7 +125,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		DC6EB9772DF0A10E00F2C2EB /* Debug */ = {
+		DC6EB9AF2DF1E7EC00F2C2EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -188,7 +188,7 @@
 			};
 			name = Debug;
 		};
-		DC6EB9782DF0A10E00F2C2EB /* Release */ = {
+		DC6EB9B02DF1E7EC00F2C2EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -244,14 +244,14 @@
 			};
 			name = Release;
 		};
-		DC6EB97A2DF0A10E00F2C2EB /* Debug */ = {
+		DC6EB9B22DF1E7EC00F2C2EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Advanced Techniques Lab/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftDataJournal/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -264,7 +264,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.HaydenBoss.Advanced-Techniques-Lab";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HaydenBoss.SwiftDataJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -272,14 +272,14 @@
 			};
 			name = Debug;
 		};
-		DC6EB97B2DF0A10E00F2C2EB /* Release */ = {
+		DC6EB9B32DF1E7EC00F2C2EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Advanced Techniques Lab/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftDataJournal/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -292,7 +292,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.HaydenBoss.Advanced-Techniques-Lab";
+				PRODUCT_BUNDLE_IDENTIFIER = com.HaydenBoss.SwiftDataJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -303,25 +303,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DC6EB9662DF0A10E00F2C2EB /* Build configuration list for PBXProject "Advanced Techniques Lab" */ = {
+		DC6EB99C2DF1E7EB00F2C2EB /* Build configuration list for PBXProject "SwiftDataJournal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DC6EB9772DF0A10E00F2C2EB /* Debug */,
-				DC6EB9782DF0A10E00F2C2EB /* Release */,
+				DC6EB9AF2DF1E7EC00F2C2EB /* Debug */,
+				DC6EB9B02DF1E7EC00F2C2EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DC6EB9792DF0A10E00F2C2EB /* Build configuration list for PBXNativeTarget "Advanced Techniques Lab" */ = {
+		DC6EB9B12DF1E7EC00F2C2EB /* Build configuration list for PBXNativeTarget "SwiftDataJournal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DC6EB97A2DF0A10E00F2C2EB /* Debug */,
-				DC6EB97B2DF0A10E00F2C2EB /* Release */,
+				DC6EB9B22DF1E7EC00F2C2EB /* Debug */,
+				DC6EB9B32DF1E7EC00F2C2EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = DC6EB9632DF0A10E00F2C2EB /* Project object */;
+	rootObject = DC6EB9992DF1E7EB00F2C2EB /* Project object */;
 }
