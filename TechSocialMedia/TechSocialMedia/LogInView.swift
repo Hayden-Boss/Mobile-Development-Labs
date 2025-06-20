@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct LogInView: View {
-    @Binding var isLoggedIn: Bool
+    @Binding var loggedInUser: User?
     @State var email = ""
     @State var password = ""
     @State var errorMessage = ""
+    @State var isLoading = false
+    
     var authenticationController = AuthenticationController()
     
     var body: some View {
@@ -19,19 +21,25 @@ struct LogInView: View {
             Text("Tech Social Media App")
                 .font(.title)
             TextField("Email", text: $email)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .textFieldStyle(.roundedBorder)
             SecureField("Password", text: $password)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .textFieldStyle(.roundedBorder)
                 .padding(.bottom, 24)
-            Text(errorMessage)
-                .foregroundStyle(Color.red)
-            
+            if isLoading {
+                ProgressView()
+            } else {
+                Text(errorMessage)
+                    .foregroundStyle(.red)
+            }
             Button("Sign in") {
                 signInButtonTapped()
             }
-            .disabled(email.isEmpty || password.isEmpty)
-            .padding(.top, 80)
+            .disabled(email.isEmpty || password.isEmpty || isLoading)
+            .padding(.top, 60)
         }
+        .onChange(of: email + password, { _, _ in
+            errorMessage = ""
+        })
         .padding(28)
         .onAppear {
 #if DEBUG
@@ -39,7 +47,7 @@ struct LogInView: View {
 //        automatically sign in everytime you launch the app.
 
         email = "hayden_boss@yahoo.com"
-        password = "Password123"
+        password = ""
         signInButtonTapped()
 #endif
         }
@@ -47,10 +55,14 @@ struct LogInView: View {
     
     func signInButtonTapped() {
         guard !email.isEmpty, !password.isEmpty else {return}
-        
+        errorMessage = ""
+        isLoading = true
         Task {
+            defer {
+                isLoading = false
+            }
             do {
-                isLoggedIn = try await authenticationController.signIn(email: email, password: password)
+                loggedInUser = try await authenticationController.signIn(email: email, password: password)
             } catch {
                 print(error)
                 errorMessage = "Invalid Username or Password"
@@ -60,5 +72,5 @@ struct LogInView: View {
 }
 
 #Preview {
-    LogInView(isLoggedIn: .constant(false))
+    LogInView(loggedInUser: .constant(nil))
 }

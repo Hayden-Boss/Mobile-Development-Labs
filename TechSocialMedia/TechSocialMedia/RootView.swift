@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct RootView: View {
-    @State var isLoggedIn: Bool = false
+    @State var loggedInUser: User?
     
     var body: some View {
-        if isLoggedIn {
-            Text("Logged in")
+        if let user = loggedInUser {
+            let api = API(user: user)
+            NavigationStack {
+                MainView(api: API(user: user))
+            }
         } else {
-            LogInView(isLoggedIn: $isLoggedIn)
+            LogInView(loggedInUser: $loggedInUser)
         }
     }
 }
+
