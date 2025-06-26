@@ -47,7 +47,7 @@ struct LogInView: View {
 //        automatically sign in everytime you launch the app.
 
         email = "hayden_boss@yahoo.com"
-        password = ""
+        password = "hAxxu2-xacvux-qadnun"
         signInButtonTapped()
 #endif
         }

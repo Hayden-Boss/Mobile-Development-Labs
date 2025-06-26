@@ -21,11 +21,6 @@ struct AuthenticationController {
      - Returns: A boolean depending on whether or not the operation was successful
      */
     func signIn(email: String, password: String) async throws -> User {
-        
-        try? await Task.sleep(for: .seconds(3))
-        guard password == "password" else { throw AuthError.couldNotSignIn }
-        
-        return .init(firstName: "Hayden", lastName: "Boss", email: "hayden_boss@yahoo.com", userUUID: .init(), secret: .init(), userName: "Heebs")
         // Initialize our session and request
         let session = URLSession.shared
         var request = URLRequest(url: URL(string: "\(API.url)/signIn")!)
@@ -51,7 +46,19 @@ struct AuthenticationController {
         let user = try decoder.decode(User.self, from: data)
         
         User.current = user
+        
+        let profileController = ProfileController()
+        let profile = try await profileController.getProfile()
+        UserProfile.current = profile
 
         return user
     }
 }
+
+
+// 1. Create new controller (maybe PostController???)
+// 2. Create new func (maybe createPost(title:,body:)????)
+// 3. Copy/paste api stuff from above in to createPost
+// 4. go line by line and edit it to match the api docs
+// 5. create the UI in SwiftUI
+// 6. call createPost from SwiftUI when the user taps the "post" button

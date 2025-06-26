@@ -9,7 +9,20 @@ import SwiftUI
 
 struct MainView: View {
     let api: API
+    
+    private let profileController = ProfileController()
+    
     var body: some View {
-        Text("You're signed in!")
+        TabView {
+            PostPage()
+                .tabItem {
+                    Label("Posts", systemImage: "line.3.horizontal")
+                }
+            
+            ProfilePage()
+                .tabItem {
+                    Label("Profile", systemImage: "person.circle")
+                }
+        }
     }
 }

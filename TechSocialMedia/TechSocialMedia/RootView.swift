@@ -12,7 +12,6 @@ struct RootView: View {
     
     var body: some View {
         if let user = loggedInUser {
-            let api = API(user: user)
             NavigationStack {
                 MainView(api: API(user: user))
             }
