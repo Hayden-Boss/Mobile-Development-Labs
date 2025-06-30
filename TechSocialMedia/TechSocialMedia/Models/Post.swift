@@ -16,6 +16,6 @@ struct Post: Codable {
     var createdDate: String // JSON Key is `createdDate`
     var authorUserName: String
     var authorUserId: String
-    var userLiked: Bool
+    var userLiked: Bool = false
 //    var photo: Photo
 }

@@ -211,40 +211,45 @@ struct PostController {
 //        return
 //    }
 //    
-//    func updateLikes() async throws -> Post.likes {
-//        let session = URLSession.shared
-//        var request = URLRequest(url: URL(string: "\(API.url)/updateLikes")!)
-//        guard let currentUser = User.current else {
-//            throw PostError.noUserFound
-//        }
-//        // Put the credentials in JSON format
-//        let userParam = URLQueryItem(name: "userUUID", value: currentUser.userUUID.uuidString)
-//        let secretParam = URLQueryItem(name: "userSecret", value: currentUser.secret.uuidString)
-//        request.url?.append(queryItems: [userParam, secretParam])
-//        request.httpMethod = "GET"
-//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//        
-//        // Make the request
-//        let (data, response) = try await session.data(for: request)
-//        
-//        // Ensure we had a good response (status 200)
-//        guard let httpResponse = response as? HTTPURLResponse else {
-//            throw PostError.unknownError
-//        }
-//        // Ensure we had a good response (status 200)
-//        if httpResponse.statusCode == 200 {
-//            // yay!
-//        } else if httpResponse.statusCode == 400 {
-//            throw PostError.noUserFound
-//        } else {
-//            throw PostError.unknownError
-//        }
-//        
-//        // Decode our response data to a usable User struct
-//        let decoder = JSONDecoder()
-//        
-//    }
-//    
+    func updateLikes(for postid: Int) async throws -> Post {
+            // Initialize our session and request
+            let session = URLSession.shared
+            var request = URLRequest(url: URL(string: "\(API.url)/updateLikes")!)
+    
+            // Put the credentials in JSON format
+            /*
+             userSecret - UUID
+             postid - Int
+             */
+            guard let user = User.current else { throw PostError.noUserFound }
+        let credentials: [String: Any] = ["userSecret": user.secret.uuidString, "postid": postid]
+    
+            // Add json data to the body of the request. Also clarify that this is a POST request
+            request.httpBody = try JSONSerialization.data(withJSONObject: credentials, options: .prettyPrinted)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    
+            // Make the request
+            let (data, response) = try await session.data(for: request)
+    
+            guard let httpResponse = response as? HTTPURLResponse else {
+                throw PostError.unknownError
+            }
+    
+            // Ensure we had a good response (status 200)
+            if httpResponse.statusCode == 200 {
+                // yay!
+            } else if httpResponse.statusCode == 400 {
+                throw PostError.noUserFound
+            } else {
+                throw PostError.unknownError
+            }
+        
+        let decoder = JSONDecoder()
+        let updatedPost = try decoder.decode(Post.self, from: data)
+        return updatedPost
+        }
+//
 //    func getUserPosts() async throws -> UserProfile {
 //        let session = URLSession.shared
 //        var request = URLRequest(url: URL(string: "\(API.url)/userPosts")!)
