@@ -39,11 +39,11 @@ struct ProfilePage: View {
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Bio:")
                             .font(.headline)
-                        Text(profile.bio)
+                        Text(profile.bio ?? "")
 
                         Text("Tech Interests:")
                             .font(.headline)
-                        Text(profile.techInterests)
+                        Text(profile.techInterests ?? "")
                     }
 
                     Spacer()

@@ -13,44 +13,47 @@ struct PostController {
         case unknownError
     }
     
-//    
-//    func createPost(title: String, body: String) async throws -> Post {
-//        // Initialize our session and request
-//        let session = URLSession.shared
-//        var request = URLRequest(url: URL(string: "\(API.url)/createPost")!)
-//        
-//        // Put the credentials in JSON format
-//        /*
-//         userSecret - UUID
-//         post: {
-//         "title": String,
-//         "body": String
-//         }
-//         */
-//        guard let user = User.current else { throw PostError.noUserFound }
-//        let credentials: [String: Any] = ["userSecret": user.secret, "post": ["title": title, "body": body]]
-//        
-//        // Add json data to the body of the request. Also clarify that this is a POST request
-//        request.httpBody = try JSONSerialization.data(withJSONObject: credentials, options: .prettyPrinted)
-//        request.httpMethod = "POST"
-//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//        
-//        // Make the request
-//        let (data, response) = try await session.data(for: request)
-//        
-//        guard let httpResponse = response as? HTTPURLResponse else {
-//            throw PostError.unknownError
-//        }
-//        
-//        // Ensure we had a good response (status 200)
-//        if httpResponse.statusCode == 200 {
-//            // yay!
-//        } else if httpResponse.statusCode == 400 {
-//            throw PostError.noUserFound
-//        } else {
-//            throw PostError.unknownError
-//        }
-//    }
+    
+    func createPost(title: String, body: String) async throws -> Post {
+        // Initialize our session and request
+        let session = URLSession.shared
+        var request = URLRequest(url: URL(string: "\(API.url)/createPost")!)
+        
+        // Put the credentials in JSON format
+        /*
+         userSecret - UUID
+         post: {
+         "title": String,
+         "body": String
+         }
+         */
+        guard let user = User.current else { throw PostError.noUserFound }
+        let credentials: [String: Any] = ["userSecret": user.secret, "post": ["title": title, "body": body]]
+        
+        // Add json data to the body of the request. Also clarify that this is a POST request
+        request.httpBody = try JSONSerialization.data(withJSONObject: credentials, options: .prettyPrinted)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // Make the request
+        let (data, response) = try await session.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw PostError.unknownError
+        }
+        
+        // Ensure we had a good response (status 200)
+        if httpResponse.statusCode == 200 {
+            // yay!
+        } else if httpResponse.statusCode == 400 {
+            throw PostError.noUserFound
+        } else {
+            throw PostError.unknownError
+        }
+        
+        let decoder = JSONDecoder()
+        return try decoder.decode(Post.self, from: data)
+    }
 //    
 //    func editPost(updatedPost: Post) async throws -> Post {
 //        let session = URLSession.shared
