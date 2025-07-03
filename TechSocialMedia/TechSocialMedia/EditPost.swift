@@ -1,44 +1,48 @@
 //
-//  EditProfile.swift
+//  EditPost.swift
 //  TechSocialMedia
 //
-//  Created by Hayden Boss on 6/24/25.
+//  Created by Hayden Boss on 7/1/25.
 //
 
 import SwiftUI
 
-struct EditProfile: View {
+struct EditPost: View {
     @Environment(\.dismiss) private var dismiss
     
-    @State private var bio: String = UserProfile.current?.bio ?? ""
-    @State private var techInterests: String = UserProfile.current?.techInterests ?? ""
+    @State private var title: String
+    @State private var bodyText: String
     @State private var isSaving = false
     @State private var errorMessage: String?
+    
+    let post: Post
+    let postController: PostController
 
-    let profileController = ProfileController()
+    init(post: Post, postController: PostController) {
+        self.post = post
+        self.postController = postController
+        _title = State(initialValue: post.title)
+        _bodyText = State(initialValue: post.body)
+    }
     
     var body: some View {
         NavigationStack {
             Form {
-                Section(header: Text("Bio")) {
-                    TextEditor(text: $bio)
-                        .frame(minHeight: 100)
+                Section(header: Text("Title")) {
+                    TextField("Enter post title", text: $title)
                 }
-
-                Section(header: Text("Tech Interests")) {
-                    TextEditor(text: $techInterests)
-                        .frame(minHeight: 100)
+                Section(header: Text("Body")) {
+                    TextEditor(text: $bodyText)
+                        .frame(minHeight: 150)
                 }
-
                 if let errorMessage = errorMessage {
                     Section {
-                        Text(errorMessage)
-                            .foregroundColor(.red)
+                        Text(errorMessage).foregroundColor(.red)
                     }
                 }
             }
             .disabled(isSaving)
-            .navigationTitle("Edit Profile")
+            .navigationTitle("Edit Post")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel") {
@@ -50,34 +54,34 @@ struct EditProfile: View {
                         ProgressView()
                     } else {
                         Button("Save") {
-                            saveProfile()
+                            savePost()
                         }
+                        .disabled(title.isEmpty || bodyText.isEmpty)
                     }
                 }
             }
         }
     }
     
-    func saveProfile() {
+    func savePost() {
         isSaving = true
         errorMessage = nil
         
         Task {
             do {
-                // Assume updateProfile updates the current profile on server and returns the updated profile
-                let updatedProfile = try await profileController.updateProfile(bio: bio, techInterests: techInterests)
+                try await postController.editPost(post: post, updatedTitle: title, updatedBody: bodyText)
                 await MainActor.run {
-                    UserProfile.current = updatedProfile
                     isSaving = false
                     dismiss()
                 }
             } catch {
                 await MainActor.run {
-                    errorMessage = "Failed to save profile. Try again."
+                    errorMessage = "Failed to save post. Please try again."
                     isSaving = false
                 }
-                print("save profile error:", error)
+                print("Edit post error:", error)
             }
         }
     }
 }
+
